@@ -1,12 +1,9 @@
-import os
-
-database = {}
+data = {}
 
 class BudgetApp:
 
     def __init__(self):
         
-        os.system('cls')
         self.category = 'food'
         self.amount = 1500
         self.menu()
@@ -14,7 +11,6 @@ class BudgetApp:
     # METHODS
     def menu(self):
         
-        os.system('cls')
         print('**** Welcome to Knight BudgetApp ****')
         
         user = int(input('\n *** What would you like to do? *** \n press (1) to create a new budget \n press (2) to deposit into a budget \n press (3) to make a withdrawal from chosen budget \n press (4) to check your budget balance \n press (5) to transfer between budget categories \n press (6) to quit. \n'))
@@ -53,14 +49,14 @@ class BudgetApp:
     def newBudget(self):
 
         print('\n**** Creating a new budget **** \n')
-        n = int(input('Number of elements: '))
+        
+        categoryName = input('Enter category name \n')
+        amount = int(input('Enter budget amount \n $'))
 
-        for i in range(n):
-            category = input('Enter your budget category: \n')
-            amount = int(input('Enter your budget amount: \n $'))
-            database.update({category:amount})
-            print(database)
-            
+        data[categoryName] = amount
+
+        print(f'New budget has been created: Budget {categoryName} was setup with ${amount} \n')
+
         self.menu()
 
 
@@ -88,7 +84,6 @@ class BudgetApp:
 
             print('Invalid input \n')
             self.quit()
-
 
     def balance(self):
 
@@ -219,6 +214,7 @@ BudgetApp()
 # print('\n ***** category line *****')
 # for categoryName, amount in database.items():
 #     print(categoryName + 'has' + amount + 'rent')
+
 
 
 
