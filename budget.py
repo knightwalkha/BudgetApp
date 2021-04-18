@@ -53,9 +53,15 @@ class BudgetApp:
     def newBudget(self):
 
         print('\n**** Creating a new budget **** \n')
+        n = int(input('Number of elements: '))
 
-        BudgetName = input('Enter your budget name \n')
-        amount = input('Enter your budget amount \n $')
+        for i in range(n):
+            category = input('Enter your budget category: \n')
+            amount = int(input('Enter your budget amount: \n $'))
+            database.update({category:amount})
+            print(database)
+            
+        self.menu()
 
 
     def deposit(self):
@@ -188,6 +194,31 @@ class BudgetApp:
 
 
 BudgetApp()
+
+
+
+
+# database = {}
+
+# categoryOpen = True
+
+# while categoryOpen:
+
+#     categoryName = input('What new budget category are you creating \n')
+#     amount = int(input('What is the amount you want to budget for this category \n $'))
+
+#     # Stores the response in the dictionary
+#     database[categoryName] = amount
+
+#     repeat = input('Do you want to create another budget category? \n')
+#     if repeat == 'no':
+#         categoryOpen = False
+
+
+# # To get the data in database
+# print('\n ***** category line *****')
+# for categoryName, amount in database.items():
+#     print(categoryName + 'has' + amount + 'rent')
 
 
 
