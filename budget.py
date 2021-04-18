@@ -193,31 +193,6 @@ BudgetApp()
 
 
 
-# database = {}
-
-# categoryOpen = True
-
-# while categoryOpen:
-
-#     categoryName = input('What new budget category are you creating \n')
-#     amount = int(input('What is the amount you want to budget for this category \n $'))
-
-#     # Stores the response in the dictionary
-#     database[categoryName] = amount
-
-#     repeat = input('Do you want to create another budget category? \n')
-#     if repeat == 'no':
-#         categoryOpen = False
-
-
-# # To get the data in database
-# print('\n ***** category line *****')
-# for categoryName, amount in database.items():
-#     print(categoryName + 'has' + amount + 'rent')
-
-
-
-
 
 
 
