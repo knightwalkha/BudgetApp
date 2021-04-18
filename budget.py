@@ -87,6 +87,9 @@ class BudgetApp:
     def deposit(self):
 
         print('**** Depositing into your budget **** \n')
+
+        for key, value in data.items():
+            print(f'- {key}')
         
         try:
             selected = int(input('\n Thank you for depositing into your budget. \n Do you want to perfom another transaction? \n Press (1) To continue to the main menu. \n Press (2) To quit the app. \n'))
@@ -213,9 +216,6 @@ class BudgetApp:
 
 
 BudgetApp()
-
-print(data)
-
 
 
 
