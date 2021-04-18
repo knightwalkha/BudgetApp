@@ -57,7 +57,31 @@ class BudgetApp:
 
         print(f'New budget has been created: Budget {categoryName} was setup with ${amount} \n')
 
-        self.menu()
+        try:
+            selected = int(input('\n Do you want to perfom another transaction? \n Press (1) To create a new budget. \n Press (2) To continue to main menu. \n Press (3) To quit. \n'))
+
+        except:
+
+            print('Invalid input \n')
+            self.menu()
+
+        if(selected == 1):
+            
+            self.newBudget()
+
+        elif(selected == 2):
+
+            self.menu()
+        
+        elif(selected == 3):
+
+            self.quit()
+
+        else:
+
+            print('Invalid input \n')
+            self.quit()
+
 
 
     def deposit(self):
@@ -189,6 +213,8 @@ class BudgetApp:
 
 
 BudgetApp()
+
+print(data)
 
 
 
